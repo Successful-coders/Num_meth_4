@@ -3,6 +3,7 @@
 #include <vector>
 #include <complex>
 #define PI 3.1415926535897932
+
 enum FUNCTYPE {
 	cos2pwj,//задание 2
 	Acos2pj,//задание 3
@@ -10,6 +11,7 @@ enum FUNCTYPE {
 	A0pluscos2pj,//задание 5
 	cos2pplus001//задание 6
 };
+
 class VectorZ
 {
 public:

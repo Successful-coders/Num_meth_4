@@ -1,12 +1,13 @@
 #include "vector.h"
 
-VectorZ::VectorZ(int N)
+VectorZ::VectorZ(int N1)
 {
-	Z.resize(N);
-	DFT_Data.resize(N);
-	FFT_Data.resize(N);
-	IDFT_Data.resize(N);
-	IFFT_Data.resize(N);
+	N = N1;
+	Z.resize(N1);
+	DFT_Data.resize(N1);
+	FFT_Data.resize(N1);
+	IDFT_Data.resize(N1);
+	IFFT_Data.resize(N1);
 
 }
 void VectorZ::FillVector()

@@ -3,8 +3,23 @@
 #include <vector>
 #include <complex>
 
-class DFT 
+class DiscreteTransformation
 {
-	void RealizeDFT();
-	void RealizeFFT();
+public:
+	void RealizeDFT()
+	{
+
+	}
+	void RealizeFFT()
+	{
+
+	}
+	void RealizeIDFT()
+	{
+
+	}
+	void RealizeIFFT()
+	{
+
+	}
 };

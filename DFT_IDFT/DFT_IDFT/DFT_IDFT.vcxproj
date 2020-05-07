@@ -139,7 +139,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DFT.h" />
-    <ClCompile Include="IDFT.h" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="vector.cpp" />
   </ItemGroup>

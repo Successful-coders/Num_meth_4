@@ -18,9 +18,6 @@
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="IDFT.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClCompile>
     <ClCompile Include="DFT.h">
       <Filter>Файлы заголовков</Filter>
     </ClCompile>
