@@ -24,5 +24,13 @@
     <ClCompile Include="DFT.h">
       <Filter>Файлы заголовков</Filter>
     </ClCompile>
+    <ClCompile Include="vector.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

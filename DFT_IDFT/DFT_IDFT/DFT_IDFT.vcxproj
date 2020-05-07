@@ -141,6 +141,10 @@
     <ClCompile Include="DFT.h" />
     <ClCompile Include="IDFT.h" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="vector.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
