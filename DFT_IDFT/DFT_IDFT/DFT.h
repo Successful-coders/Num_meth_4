@@ -18,8 +18,8 @@ public:
 		{
 			for (int n = 0; n < N; n++)
 			{
-				double realPart = cos((2 * PI / N) * k * n);
-				double imagPart = sin((2 * PI / N) * k * n);
+				double realPart = cos((2.0 * PI / N) * k * n);
+				double imagPart = sin((2.0 * PI / N) * k * n);
 				std::complex<double> w(realPart, imagPart);
 				sum += data[n] * w;
 			}
