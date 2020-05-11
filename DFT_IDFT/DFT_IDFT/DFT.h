@@ -1,7 +1,9 @@
+#pragma once
 #include <iostream>
 #include <iomanip>
 #include <vector>
 #include <complex>
+
 #include "vector.h"
 
 class DiscreteTransformation
@@ -11,10 +13,8 @@ public:
 	{
 		int N = data.size();
 		int K = N;
-		result.resize(N);
-
 		std::complex<double> sum;
-
+		result.resize(0);
 		for (int k = 0; k < K; k++)
 		{
 			for (int n = 0; n < N; n++)
@@ -25,7 +25,7 @@ public:
 				sum += data[n] * w;
 			}
 			result.push_back(sum);
-		} 
+		}
 	}
 
 	void RealizeFFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)

@@ -11,11 +11,11 @@ int main()
 	vector.A0 = -1;
 	vector.fi = -PI;
 	vector.FillVector();
-
-	DFT.RealizeDFT();
-	//for (int i = 0; i < vector.Z.size(); i++)
-	//{
-	//	std::cout << vector.Z[i]._Val[0] << "+ " << vector.Z[i]._Val[1] << "i\n";
-	//}
+	
+	DFT.RealizeDFT(vector.Z, vector.DFT_Data);
+	for (int i = 0; i < vector.Z.size(); i++)
+	{
+		std::cout << vector.DFT_Data[i]._Val[0] << "+ " << vector.DFT_Data[i]._Val[1] << "i\n";
+	}
 
 }

@@ -4,10 +4,10 @@ VectorZ::VectorZ(int N1)
 {
 	N = N1;
 	Z.resize(N1);
-	DFT_Data.resize(N1);
-	FFT_Data.resize(N1);
-	IDFT_Data.resize(N1);
-	IFFT_Data.resize(N1);
+	DFT_Data.resize(0);
+	FFT_Data.resize(0);
+	IDFT_Data.resize(0);
+	IFFT_Data.resize(0);
 
 }
 void VectorZ::FillVector()
