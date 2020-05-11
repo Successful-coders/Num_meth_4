@@ -9,13 +9,22 @@ class DiscreteTransformation
 public:
 	void RealizeDFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
 	{
-		int M = data.size();
-		for (int i = 0; i < M; i++)
+		int N = data.size();
+		int K = N;
+		result.resize(N);
+
+		std::complex<double> sum;
+
+		for (int k = 0; k < K; k++)
 		{
-			for (int k = 0; k < M; k++)
+			for (int n = 0; n < N; n++)
 			{
-				
+				double realPart = cos((2 * PI / N) * k * n);
+				double imagPart = sin((2 * PI / N) * k * n);
+				std::complex<double> w(realPart, imagPart);
+				sum += data[n] * w;
 			}
+			result.push_back(sum);
 		} 
 	}
 
@@ -43,7 +52,7 @@ public:
 			result[m + M] = U - Exp * V;
 		}
 	}
-	void RealizeIDFT()
+	void RealizeIDFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
 	{
 
 	}
