@@ -14,7 +14,6 @@ public:
 		int N = data.size();
 		int K = N;
 		std::complex<double> sum;
-		result.resize(0);
 		for (int k = 0; k < K; k++)
 		{
 			for (int n = 0; n < N; n++)

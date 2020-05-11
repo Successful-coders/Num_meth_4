@@ -138,7 +138,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DFT.h" />
+    <ClCompile Include="DFT.h">
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</SDLCheck>
+    </ClCompile>
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="vector.cpp" />
   </ItemGroup>
