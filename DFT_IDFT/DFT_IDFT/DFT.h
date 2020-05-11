@@ -7,7 +7,7 @@
 class DiscreteTransformation
 {
 public:
-	std::vector<std::complex<double>> RealizeDFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
+	void RealizeDFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
 	{
 		int M = data.size();
 		for (int i = 0; i < M; i++)
@@ -17,10 +17,9 @@ public:
 				
 			}
 		} 
-		return result;
 	}
 
-	std::vector<std::complex<double>> RealizeFFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
+	void RealizeFFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
 	{
 		int N = data.size(), M = N / 2;
 		result.clear(); result.resize(N);
@@ -43,14 +42,12 @@ public:
 			result[m] = U + Exp * V;
 			result[m + M] = U - Exp * V;
 		}
-		return result;
 	}
-	std::vector<std::complex<double>> RealizeIDFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
+	void RealizeIDFT()
 	{
 
-		return result;
 	}
-	std::vector<std::complex<double>> RealizeIFFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
+	void RealizeIFFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
 	{
 
 		int N = data.size();
@@ -64,6 +61,5 @@ public:
 		}
 
 		result[0] /= double(N);
-		return result;
 	}
 };
