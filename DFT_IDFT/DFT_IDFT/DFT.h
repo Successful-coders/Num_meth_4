@@ -16,11 +16,12 @@ public:
 		std::complex<double> sum;
 		for (int k = 0; k < K; k++)
 		{
+			sum = std::complex<double>(0, 0);
 			for (int n = 0; n < N; n++)
 			{
-				double realPart = cos((2.0 * PI / N) * k * n);
-				double imagPart = sin((2.0 * PI / N) * k * n);
-				std::complex<double> w(realPart, imagPart);
+				double realPart = cos((2.0 * PI * k * n / N) );
+				double imagPart = sin((2.0 * PI * k * n / N) );
+				std::complex<double> w(realPart, -imagPart);
 				sum += data[n] * w;
 			}
 			result.push_back(sum);
