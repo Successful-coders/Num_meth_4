@@ -25,6 +25,7 @@ public:
 
 	//Z - данные, DFT_Data - прямое DFT, IDFT_Data - обратное DFT
 	std::vector<std::complex<double>> Z, DFT_Data, FFT_Data, IDFT_Data, IFFT_Data;
+	std::vector <double> ampl, f;
 
 	VectorZ(int N);
 	void FillVector();
