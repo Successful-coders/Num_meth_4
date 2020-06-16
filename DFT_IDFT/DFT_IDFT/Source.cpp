@@ -18,7 +18,7 @@ int main()
 		std::cout << vector.Z[i] << "i\n";
 	}
 	std::cout << "\n\n";
-	
+
 	DFT.RealizeDFT(vector.Z, vector.DFT_Data);
 	for (int i = 0; i < vector.DFT_Data.size(); i++)
 	{
