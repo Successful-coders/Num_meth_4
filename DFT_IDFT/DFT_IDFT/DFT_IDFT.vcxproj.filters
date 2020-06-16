@@ -24,9 +24,30 @@
     <ClCompile Include="vector.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Discrete_Fourier_Transformation.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Operators.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\igor3\OneDrive\Рабочий стол\Wavelets_Z(N)\Wavelets_Z(N)\Wavelet_Analysis.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Discrete_Fourier_Transformation.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Operators.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\igor3\OneDrive\Рабочий стол\Wavelets_Z(N)\Wavelets_Z(N)\Wavelet_Analysis.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CONST.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

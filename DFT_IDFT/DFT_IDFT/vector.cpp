@@ -17,7 +17,7 @@ void VectorZ::FillVector()
 		
 		for (int i = 0; i < N; i++)
 		{
-			Z[i]._Val[0] = cos(2 * PI * i * w / N);
+			Z[i]._Val[0] = cos(2.0 * PI * i * w / N);
 			Z[i]._Val[1] = 0;
 		}
 	}
@@ -26,7 +26,7 @@ void VectorZ::FillVector()
 	{
 		for (int i = 0; i < N; i++)
 		{
-			Z[i]._Val[0] = A*cos(2 * PI * i / N);
+			Z[i]._Val[0] = A*cos(2.0 * PI * i / N);
 			Z[i]._Val[1] = 0;
 		}
 	}
@@ -35,7 +35,7 @@ void VectorZ::FillVector()
 	{
 		for (int i = 0; i < N; i++)
 		{
-			Z[i]._Val[0] = cos(2 * PI * i / N + fi);
+			Z[i]._Val[0] = cos(2.0 * PI * i / N + fi);
 			Z[i]._Val[1] = 0;
 		}
 	}
@@ -44,7 +44,7 @@ void VectorZ::FillVector()
 	{
 		for (int i = 0; i < N; i++)
 		{
-			Z[i]._Val[0] = A0 + cos(2 * PI * i / N);
+			Z[i]._Val[0] = A0 + cos(2.0 * PI * i / N);
 			Z[i]._Val[1] = 0;
 		}
 	}
@@ -53,7 +53,7 @@ void VectorZ::FillVector()
 	{
 		for (int i = 0; i < N; i++)
 		{
-			Z[i]._Val[0] = cos(2 * PI * i / N) + 0.01 * cos(2 * PI * i * w/ N);
+			Z[i]._Val[0] = cos(2.0 * PI * i / N) + 0.01 * cos(2.0 * PI * i * w/ N);
 			Z[i]._Val[1] = 0;
 		}
 	}

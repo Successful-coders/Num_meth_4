@@ -19,8 +19,8 @@ public:
 			sum = std::complex<double>(0, 0);
 			for (int n = 0; n < N; n++)
 			{
-				double realPart = cos((2.0 * PI * k * n / N) );
-				double imagPart = sin((2.0 * PI * k * n / N) );
+				double realPart = cos((2.0 * PI * k * n / N));
+				double imagPart = sin((2.0 * PI * k * n / N));
 				std::complex<double> w(realPart, -imagPart);
 				sum += data[n] * w;
 			}
@@ -54,11 +54,24 @@ public:
 	}
 	void RealizeIDFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
 	{
-
+		int N = data.size();
+		RealizeDFT(data, result);
+		std::complex<double> sum;
+		for (int k = 0; k < N; k++)
+		{
+			sum = std::complex<double>(0, 0);
+			for (int n = 0; n < N; n++)
+			{
+				double realPart = cos((2.0 * PI * k * n / N));
+				double imagPart = sin((2.0 * PI * k * n / N));
+				std::complex<double> w(realPart, imagPart);
+				sum += result[n] * w;
+			}
+			result.push_back(sum / double(N));
+		}
 	}
 	void RealizeIFFT(const std::vector<std::complex<double>>& data, std::vector<std::complex<double>>& result)
 	{
-
 		int N = data.size();
 		RealizeFFT(data, result);
 		std::complex<double> Val;
