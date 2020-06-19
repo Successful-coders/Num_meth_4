@@ -138,7 +138,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\igor3\OneDrive\Рабочий стол\Wavelets_Z(N)\Wavelets_Z(N)\Wavelet_Analysis.cpp" />
     <ClCompile Include="DFT.h">
       <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</SDLCheck>
     </ClCompile>
@@ -146,13 +145,14 @@
     <ClCompile Include="Operators.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="vector.cpp" />
+    <ClCompile Include="Wavelet_Analysis.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\igor3\OneDrive\Рабочий стол\Wavelets_Z(N)\Wavelets_Z(N)\Wavelet_Analysis.h" />
     <ClInclude Include="CONST.h" />
     <ClInclude Include="Discrete_Fourier_Transformation.h" />
     <ClInclude Include="Operators.h" />
     <ClInclude Include="vector.h" />
+    <ClInclude Include="Wavelet_Analysis.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

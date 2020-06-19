@@ -30,7 +30,7 @@
     <ClCompile Include="Operators.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\igor3\OneDrive\Рабочий стол\Wavelets_Z(N)\Wavelets_Z(N)\Wavelet_Analysis.cpp">
+    <ClCompile Include="Wavelet_Analysis.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,10 +44,10 @@
     <ClInclude Include="Operators.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\igor3\OneDrive\Рабочий стол\Wavelets_Z(N)\Wavelets_Z(N)\Wavelet_Analysis.h">
+    <ClInclude Include="CONST.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CONST.h">
+    <ClInclude Include="Wavelet_Analysis.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

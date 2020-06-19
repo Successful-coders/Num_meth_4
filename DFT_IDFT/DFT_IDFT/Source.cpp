@@ -1,42 +1,53 @@
 #include "vector.h"
 #include "DFT.h"
+#include "Wavelet_Analysis.h"
 
 int main()
 {
-	VectorZ vector(8);
-	DiscreteTransformation DFT;
-	vector.type = cos2pwj;
-	vector.w = 100;
-	vector.A = -1;
-	vector.A0 = -1;
-	vector.fi = -PI;
-	vector.FillVector();
+	//число отчсётов
+	int N = 512;
 
-	for (int i = 0; i < vector.DFT_Data.size(); i++)
-	{
-		//std::cout << vector.DFT_Data[i]._Val[0] << " + " << vector.DFT_Data[i]._Val[1] << "i\n";
-		std::cout << vector.Z[i] << "i\n";
-	}
-	std::cout << "\n\n";
+	//число этапов
+	int Stage = 4;
 
-	DFT.RealizeDFT(vector.Z, vector.DFT_Data);
-	for (int i = 0; i < vector.DFT_Data.size(); i++)
-	{
-		std::cout << vector.DFT_Data[i]._Val[0] << " + " << vector.DFT_Data[i]._Val[1] << "i\n";
-	}
-	std::cout << "\n\n";
+	//сигнал и его коеффициенты разложения по вейвлет-базиксу
+	std::vector<std::complex<double>> Z(N), Koef_Psi, Koef_Fi;
 
-	DFT.RealizeIDFT(vector.Z, vector.DFT_Data);
-	for (int i = 0; i < vector.DFT_Data.size(); i++)
-	{
-		std::cout << vector.DFT_Data[i]._Val[0] << " + " << vector.DFT_Data[i]._Val[1] << "i\n";
-	}
-	std::cout << "\n\n";
+	//частичное восстановление, уточняющие данные и восстановленный сигнал
+	std::vector<std::complex<double>> P, Q, Z_Rec;
 
-	for (int i = 0; i < vector.DFT_Data.size(); i++)
+	//формирование исходного сигнала
+	for (int n = 0; n < N; n++)
 	{
-		//std::cout << vector.DFT_Data[i]._Val[0] << " + " << vector.DFT_Data[i]._Val[1] << "i\n";
-		std::cout << vector.Z[i] << "i\n";
+		if (n >= 128 && n <= 255) Z[n]._Val[0] = sin(fabs(pow(n - 128, 1.7)) / 128.0);
+		if (n >= 384 && n <= 447) Z[n]._Val[0] = sin(fabs(pow(n - 128, 2.0)) / 128.0);
 	}
-	std::cout << "\n\n";
+
+	//выбор базисной системы
+	Com_Methods::Wavelet_Analysis Wavelet_Test(N, Com_Methods::Wavelet_Analysis::Basis_Type::Complex_Shannon);
+
+	//Фаза анализа данных
+	Wavelet_Test.Analysis_Phase(Stage, Z, Koef_Psi, Koef_Fi);
+
+	//Фаза восстановления
+	Wavelet_Test.Synthesis_Phase(Stage, Koef_Psi, Koef_Fi, P, Q, Z_Rec);
+	
+	//Печать: исходный и восстановленный сигнал
+	int SETW = 22;
+	std::cout << std::left << std::setw(SETW) << "Number" << std::setw(SETW) << "Z" << std::setw(SETW) << "Z_Recovery" << std::endl;
+	for (int i = 0; i < Z.size(); i++)
+	{
+		std::cout << std::left << std::setw(SETW) << i
+			<< std::setw(SETW) << Z[i].real()
+			<< std::setw(SETW) << P[i].real() << std::endl;
+	}
+
+	//Печать: вейвлет-коэфы
+	std::cout << std::left << std::setw(SETW) << "Number" << std::setw(SETW) << "Psi" << std::setw(SETW) << "Fi" << std::endl;
+	for (int i = 0; i < Koef_Fi.size(); i++)
+	{
+		std::cout << std::left << std::setw(SETW) << pow(2, Stage) * i
+			<< std::setw(SETW) << sqrt(pow(Koef_Psi[i].real(), 2) + pow(Koef_Psi[i].imag(), 2))
+			<< std::setw(SETW) << sqrt(pow(Koef_Fi[i].real(), 2) + pow(Koef_Fi[i].imag(), 2)) << std::endl;
+	}
 }
